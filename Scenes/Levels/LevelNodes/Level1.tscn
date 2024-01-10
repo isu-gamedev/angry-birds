@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Levels/LevelBase/AreaOfInterest/AreaOfInterest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/graphics/background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/graphics/kenney_physicsAssets_v2/Spritesheet/spritesheet_tiles.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Enemy/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Obstacles/StoneObstacle/StoneObstacle1.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "terrain"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 280, 70, 70, 70 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "sand"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 210, 140, 70, 70 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "cactus"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 70, 70, 70, 70 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "grass1"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 70, 140, 70, 70 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="Gradient" id=8]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.0157068, 1 )
+colors = PoolColorArray( 0.270588, 0.0941176, 0.309804, 1, 0.204188, 0.204188, 0.204188, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1504.93, 679.921 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -4, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 872.225, -66.6275 )
+scale = Vector2( 0.914549, 0.744926 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="TileMap"]
+position = Vector2( 2384, 455 )
+rotation = 1.5708
+scale = Vector2( 0.227524, 3016.85 )
+texture = SubResource( 9 )
+centered = false
+
+[node name="AreaOfInterest" parent="." instance=ExtResource( 1 )]
+position = Vector2( 865.14, -10.6118 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfInterest"]
+position = Vector2( 4.92999, -53.3096 )
+shape = SubResource( 7 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1083, 364 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1570, 360 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1347, 365 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1467, 54 )
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="StoneObstacle1" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1236, 301 )
+
+[node name="StoneObstacle2" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1449, 301 )
+rotation = 3.14159
+
+[node name="StoneObstacle6" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1685, 301 )
+rotation = 3.14159
+
+[node name="StoneObstacle3" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1352.33, 151.598 )
+rotation = 4.71238
+
+[node name="StoneObstacle5" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1579, 152 )
+rotation = 4.71238
+
+[node name="StoneObstacle8" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1451, -147 )
+rotation = 4.71238
+
+[node name="StoneObstacle4" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1350, 2 )
+rotation = 3.14159
+
+[node name="StoneObstacle7" parent="Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1561, 4 )
+rotation = 3.14159

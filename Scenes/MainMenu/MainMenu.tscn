@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/graphics/title.png" type="Texture" id=1]
+[ext_resource path="res://Assets/graphics/background.png" type="Texture" id=2]
+[ext_resource path="res://Objects/GUI/Button1/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=4]
+
+[node name="MainMenu" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Title" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -301.0
+margin_top = -189.5
+margin_right = 301.0
+margin_bottom = -29.5
+rect_pivot_offset = Vector2( 301, 0 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -255.0
+margin_top = 90.0
+margin_right = 255.0
+margin_bottom = 160.0
+custom_constants/separation = 30
+
+[node name="Play" parent="HBoxContainer" instance=ExtResource( 3 )]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text = "PLAY"
+
+[node name="Exit" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 270.0
+margin_right = 510.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text = "EXIT"
+
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
